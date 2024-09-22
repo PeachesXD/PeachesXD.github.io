@@ -15,7 +15,7 @@
     <!-- <script>src="styles.js"</script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            //fetch('http://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors
+            fetch('http://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors use https://cors-anywhere.herokuapp.com/
             .then(response => response.json()) // แปลงข้อมูลที่ได้รับเป็น JSON
             .then(data => {
                 console.log(data);  // แสดงข้อมูลที่ดึงมาใน console
