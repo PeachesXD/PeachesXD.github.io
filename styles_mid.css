@@ -1,0 +1,466 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-family: "Quicksand", Arial, sans-serif;
+    font-weight: 400;
+    /* margin: 0 0 30px 0;  */
+}
+.p {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+.header {
+  color: #FFE6C7;
+  border-radius: 10px;
+  background-color: #18212C;
+  font-family: "Quicksand", Arial, sans-serif;
+  /* font-family: "Courier New", Courier, monospace; */
+  text-align: center;
+  font-size: 35px;
+  padding: 5px;
+  margin: 5px;
+  /* margin-left: 330px;
+  padding-left: 10px; */
+  height: 60px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* background-image: url('galaxy-space-background-image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #736583;
+  /* animation: change-background 3s infinite linear; */
+  
+}
+ 
+/* Style the side navigation */
+.sidenav {
+  /* height: 100%;
+  width: 320px; */
+  /* position: fixed; */
+  /* z-index: 1;
+  top: 0;
+  left: 0; */
+  background-color: #9BAA9D;
+  /* overflow-x: hidden; */
+  font-family: "Quicksand", Arial, sans-serif;
+}
+    
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+  
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+  
+/* Style the content */
+.content {
+  /* margin-left: 300px;
+  padding-left: 20px;
+  background-color: white;
+  height: 100%; */
+  padding: 16px;
+}
+
+.logo {
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  background: #827590;
+  /* flex-direction: column; */
+  padding: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 30px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.footer-left {
+  /* position: fixed; */
+  /* bottom: 0px; */
+  /* left: 0px;
+  padding: 0px; */
+  text-align: left;
+  /* width: 0px; */
+  color: white;
+  background-color: #4C4141;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+.header-columnleft {
+  /* color: white; */
+  /* text-align: center; */
+  border-radius: 5px;
+  background: #38515A;
+  /* flex-direction: column; */
+  padding: 0px;
+  /* font-size: 20px; */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 5px; */
+  line-height: 25px;
+  /* font-weight: 500; */
+  margin: 0px;
+}
+
+.header-column {
+  /* color: white; */
+  /* text-align: center; */
+  border-radius: 5px;
+  background: #D4435B;
+  /* flex-direction: column; */
+  padding: 0px;
+  /* font-size: 20px; */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 5px; */
+  line-height: 22px;
+  /* font-weight: 500; */
+  margin: 0px;
+}
+
+ul li {
+    list-style: none;
+    
+}
+
+.sec-title {
+    margin-bottom: 50px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.pg-title {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.8;
+    color: #000;
+}
+
+.pg-sub-title {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
+    text-transform: uppercase;
+    /* color: #999999; */
+    color: #FFE6C7;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.user-profile {
+    padding: 30px; 
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 5px;
+  /* height: 300px; Should be removed. Only for demonstration */
+  border-radius: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  padding: 5px;
+  margin: 5px;
+  
+}
+
+/* Style the footer */
+.footer {
+  color: #FFE6C7;
+  border-radius: 10px;
+  background-color: #18212C;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  /* animation: change-background 3s infinite linear; */
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+/* Left and right column */
+/* .column.side {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  width: 300px;
+  margin: 10px; */
+  /* display: flex;
+  flex-wrap: wrap;
+} */
+
+/* Middle column
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin: 10px;
+  margin-left: 330px;
+  padding-left: 20px;
+  height: 100%;
+} */
+
+/* Style the footer
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  margin-left: 330px;
+  padding-left: 20px; */
+  /* display: flex;
+  flex-wrap: wrap;
+} */
+
+/* css */
+.pull-left {float:left;}
+.pull-right {float:right;}
+.text-center {text-align:center;}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+}
+.image-container img {
+  margin: 0 0px;/* Add space between images */
+}
+
+.section {
+  padding: 5px 10px;
+  margin-top: 0px;
+}
+
+
+
+
+/* mario */
+.rotate{
+  background: url('https://martindrapeau.github.io/backbone-game-engine/docs/super-mario-sprite.png') 0 0 no-repeat; 
+  width: 32px;
+  height: 68px;
+  margin: auto;
+  float: left;
+}
+
+.clockwise, .anticlockwise{
+  color: #000;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.clockwise{
+  float: right;
+}
+
+.clockwise:hover ~ .rotate{
+  animation: rotate-clockwise 6s steps(21) infinite;
+}
+
+.auto{
+  margin-top: 40px;
+}
+
+.auto:checked ~ .rotate{
+  animation: rotate-clockwise 6s steps(21) infinite;
+}
+
+.auto:checked ~ .clockwise{
+  color: #fff;
+}
+
+.auto:checked ~ .anticlockwise{
+  color: #fff;
+}
+
+
+.anticlockwise:hover ~ .rotate{
+  animation: rotate-anticlockwise 6s steps(21) infinite;
+}
+
+.auto{
+  display: inline-block;
+  margin-left: 0;
+}
+
+.auto-rotate{
+  color: #333;
+  font-weight: bold;
+  font-family: sans-serif;
+  clear: both;
+}
+
+@keyframes rotate-clockwise {  
+  0% {background-position: 0 0; } 
+  100% {background-position: -672px 0; } 
+}
+
+@keyframes rotate-anticlockwise {  
+  0% {background-position: -672px 0; }
+  100% {background-position: 0 0; } 
+}
+
+
+
+
+/* html,
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+main {
+  width: 135vmin;
+  height: 100vmin;
+  position: relative;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.asset-img {
+  display: none;
+} */
+
+.pig {
+  position: absolute;
+  z-index: 5;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* @keyframes change-background {
+  0%,59%,98%,100% {
+    background: #736583;
+  }
+  80% {
+    background: #2B4050;
+  }
+  70% {
+    background: #184A65;
+  }
+  40% {
+    background: #28586B;
+  }
+  30% {
+    background: #49A9AB;
+  }
+  20% {
+    background: #58DED7;
+  }
+} */
+
+
+/* body { margin: 25px; text-align:center; } */
+
+/* image { 
+  padding: 10%; 
+  height: 100px;
+  width: auto;
+} */
+
+.border {
+  border: outset 2px #29363C;
+  border-radius: 10px;
+}
+
+.p-animation {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+
+
+
+* {box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: white;
+}
+
+.Teamwork-Collaboration {width: 90%; background-color: #052226;}
+.Attention-to-Detail {width: 80%; background-color: #5B9681;}
+.Time-Management {width: 85%; background-color: #478168;}
+.Maintenance {width: 96%; background-color: #F26863;}
+.PLC {width: 70%; background-color: #F7CC72;}
+.Python {width: 80%; background-color: #3D2A2E;}
+.Word-and-Excel {width: 70%; background-color: #FBDDA1;}
+.C {width: 73%; background-color: #E4A83D;}
+.Arduino {width: 77%; background-color: #67392D;}
+.html {width: 85%; background-color: #2B3F4E;}
+.css {width: 80%; background-color: #F57BA8;}
+.js {width: 65%; background-color: #39312D;}
