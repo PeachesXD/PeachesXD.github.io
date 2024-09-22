@@ -15,7 +15,7 @@
     <!-- <script>src="styles.js"</script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('http://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors
+            //fetch('http://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors
             .then(response => response.json()) // แปลงข้อมูลที่ได้รับเป็น JSON
             .then(data => {
                 console.log(data);  // แสดงข้อมูลที่ดึงมาใน console
@@ -33,7 +33,7 @@
                 `;
             })
             .catch(error => {
-                console.error('Error fetching exchange rate:', error);
+                //console.error('Error fetching exchange rate:', error);
                 document.querySelector('body').innerHTML = 'An error occurred fetching data.';
             });
         });
