@@ -25,13 +25,8 @@ h1, h2, h3, h4, h5, h6 {
   /* margin-left: 330px;
   padding-left: 10px; */
   height: 60px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* background-image: url('galaxy-space-background-image.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover; */
-
+  display: flexbox;
+  flex-wrap: wrap;
 }
 
 * {
@@ -419,8 +414,6 @@ canvas {
 .p-animation {
   animation-duration: 3s;
   animation-name: slidein;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 @keyframes slidein {
