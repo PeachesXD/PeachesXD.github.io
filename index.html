@@ -24,12 +24,12 @@
 
                 const sensorDataDiv = document.getElementById('sensor-data'); // เลือก div class "column side" เพื่อแสดงผลข้อมูล
                 sensorDataDiv.innerHTML = `
-                    <h3><strong>- Calling the API method get to the URL http://206.189.146.138/api/sensors to retrieve data</h3>
-                    <h4><strong>Timestamp:</strong> ${timestamp}</h4>
-                    <h4><strong>Temperature:</strong> ${data.temperature.toFixed(2)} °C</h4>
-                    <h4><strong>Humidity:</strong> ${data.humidity.toFixed(2)} % RH</h4>
-                    <h4><strong>Lux Sensor:</strong> ${data.luxsensor.toFixed(2)} lux</h4>
-                    <h4><strong>Motion:</strong> ${data.motion ? 'true' : 'false'}</h4>
+                    <h4><strong>- Calling the API method get to the URL http://206.189.146.138/api/sensors to retrieve data</h4>
+                    <h5><strong>Timestamp:</strong> ${timestamp}</h5>
+                    <h5><strong>Temperature:</strong> ${data.temperature.toFixed(2)} °C</h5>
+                    <h5><strong>Humidity:</strong> ${data.humidity.toFixed(2)} % RH</h5>
+                    <h5><strong>Lux Sensor:</strong> ${data.luxsensor.toFixed(2)} lux</h5>
+                    <h5><strong>Motion:</strong> ${data.motion ? 'true' : 'false'}</h5>
                 `;
             })
             .catch(error => {
@@ -180,14 +180,14 @@
                             <!-- <div class="user-profile"><img src="image\Logo_ENG_small.png" width="140px "></div> -->
                         </div><br>
                         <div class="pg-title"> King Mongkut's University of North Bangkok (2022-Present)</div>
-                        <h4>- Bachelor of Engineering, Major in Intrumentation and Automation Engineering</h4><br>
+                        <h4>- Bachelor of Engineering, Major in Intrumentation and Automation Engineering (GPA: -)</h4><br>
                         <div class="image-container">
                             <div class="user-profile"><img src="image\Technical saraburi.png" width="120px "></div>
                         </div><br>
                         <div class="pg-title"> Saraburi Technical College (2020-2022)</div>
-                        <h4>- Diploma of Vocational Education, Major in Electrical : Field of Specialization Electrcal Control Devices</h4><br>
+                        <h4>- Diploma of Vocational Education, Major in Electrical : Field of Specialization Electrcal Control Devices (GPA: 3.58)</h4><br>
                         <div class="pg-title"> Saraburi Technical College (2017-2020)</div>
-                        <h4>- Vocational Certificate,Major in Electrical Power</h4><br>
+                        <h4>- Vocational Certificate,Major in Electrical Power (GPA: 3.75)</h4><br>
                     </div>
                 </div><br>
                 
