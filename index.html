@@ -15,27 +15,32 @@
     <!-- <script>src="styles.js"</script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('https://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors use https://cors-anywhere.herokuapp.com/
-            .then(response => response.json()) // แปลงข้อมูลที่ได้รับเป็น JSON
-            .then(data => {
-                console.log(data);  // แสดงข้อมูลที่ดึงมาใน console
+            function fetchDataSensor(){
+                fetch('https://206.189.146.138/api/sensors') // ดึงข้อมูลจาก API http://206.189.146.138/api/sensors use https://cors-anywhere.herokuapp.com/
+                .then(response => response.json()) // แปลงข้อมูลที่ได้รับเป็น JSON
+                .then(data => {
+                    console.log(data);  // แสดงข้อมูลที่ดึงมาใน console
 
-                const timestamp = new Date(data.timestamp).toLocaleString(); // แปลง timestamp เป็นวันที่อ่านง่าย
+                    const timestamp = new Date(data.timestamp).toLocaleString(); // แปลง timestamp เป็นวันที่อ่านง่ายๆ
 
-                const sensorDataDiv = document.getElementById('sensor-data'); // เลือก div class "column side" เพื่อแสดงผลข้อมูล
-                sensorDataDiv.innerHTML = `
-                    <h4><strong>- Calling the API method get to the URL http://206.189.146.138/api/sensors to retrieve data</h4>
-                    <h5><strong>Timestamp:</strong> ${timestamp}</h5>
-                    <h5><strong>Temperature:</strong> ${data.temperature.toFixed(2)} °C</h5>
-                    <h5><strong>Humidity:</strong> ${data.humidity.toFixed(2)} % RH</h5>
-                    <h5><strong>Lux Sensor:</strong> ${data.luxsensor.toFixed(2)} lux</h5>
-                    <h5><strong>Motion:</strong> ${data.motion ? 'true' : 'false'}</h5>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching exchange rate:', error);
-                document.querySelector('body').innerHTML = 'An error occurred fetching data.';
-            });
+                    const sensorDataDiv = document.getElementById('sensor-data'); // เลือก div class "column side" เพื่อแสดงผลข้อมูล
+                    sensorDataDiv.innerHTML = `
+                        <h4><strong>- Calling the API method get to the URL http://206.189.146.138/api/sensors to retrieve data</h4>
+                        <h5><strong>Timestamp:</strong> ${timestamp}</h5>
+                        <h5><strong>Temperature:</strong> ${data.temperature.toFixed(2)} °C</h5>
+                        <h5><strong>Humidity:</strong> ${data.humidity.toFixed(2)} % RH</h5>
+                        <h5><strong>Lux Sensor:</strong> ${data.luxsensor.toFixed(2)} lux</h5>
+                        <h5><strong>Motion:</strong> ${data.motion ? 'true' : 'false'}</h5>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Error fetching exchange rate:', error);
+                    document.querySelector('body').innerHTML = 'An error occurred fetching data.';
+                });
+                setTimeout(fetchDataSensor, 1000); //ตั้งเวลาเรียกฟังก์ชันท์ทุก 1 วิ
+            }
+            fetchDataSensor(); //เรียกใช้ฟังก์ชันท์ตอนโหลดหน้า
+            //setInterval(fetchDataSensor, 1000); //เรียกใช้ฟังก์ชันท์ทุก 1 วิ
         });
     </script>
 
@@ -43,38 +48,38 @@
         document.addEventListener('DOMContentLoaded', function () {
             
             document.querySelector('form').onsubmit = function () {
-                // Get input values
+                // Get input values (หรือรับค่าอินพุตเข้ามา)
                 const studentId = document.querySelector('#studentId').value;
                 const studentName = document.querySelector('#studentName').value;
 
-                // Create the JSON object to send in the POST request
+                // สร้างชุดข้อมูล JSON เพื่อส่งเป็น API POST
                 const data = {
                     id: studentId,
                     name: studentName
                 };
 
-                // Send POST request with JSON body
-                fetch('http://206.189.146.138/api/students', {
+                // ส่งคำขอ POST เนื้อหา JSON
+                fetch('https://206.189.146.138/api/students', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data) //แปลง data JavaScript เป็นข้อมูลสตริงด้วย JSON.stringify()
                 })
-                .then(response => response.json()) // Parse JSON response
+                .then(response => response.json()) // แยกวิเคราะห์คำตอบ JSON
                 .then(result => {
-                    // Handle the response from the server//
+                    // การตอบกลับจากเซิร์ฟเวอร์
                     document.querySelector('#result').innerHTML = `Data sent successfully: ${JSON.stringify(result)}`;
                     alert("Data sent successfully: " + JSON.stringify(result));
                 })
                 .catch(error => {
-                    // Handle any errors//
+                    // การตอบกลับจากเซิร์ฟเวอร์เมื่อเกิดข้อผิดหลาดต่างๆ
                     console.error('Error:', error);
                     document.querySelector('#result').innerHTML = "Error sending data.";
                     alert("Error sending data!");
                 });
 
-                // Prevent form submission
+                // กันการยื่นแบบฟอร์มซ้ำ
                 return false;
             };   
         });
